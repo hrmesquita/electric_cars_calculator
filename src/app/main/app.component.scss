@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.parentClass {
+  height: 100vh;
+  background: linear-gradient(144deg, #ccd5ae, #faedcd) !important;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-text {
+  background-color: #f3ec78;
+  background-image: linear-gradient(144deg, #ccd5ae, #faedcd);
+  background-size: 100vh;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.centered-box {
+  width: 35vw;
+  height: 40vh;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}

@@ -1,0 +1,74 @@
+<section class="parentClass">
+  <div class="centered-box">
+    <div class="md:flex md:justify-center mb-6">
+      <h1
+        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-900"
+      >
+        Insira os valores a calcular
+      </h1>
+    </div>
+    <div class="md:flex md:justify-center mb-6">
+      <form [formGroup]="electricCalculationsForm">
+        <div class="flex flex-wrap -mx-3 mb-6 max-w-64">
+          <label
+            class="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2"
+            for="kVA"
+          >
+            Quantidade de kVA
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            formControlName="kVA"
+            id="kVA"
+            placeholder="6.9"
+          />
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6 max-w-64">
+          <label
+            class="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2"
+            for="costPerkVA"
+          >
+            Custo por kVA
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            formControlName="costPerkVA"
+            id="costPerkVA"
+            placeholder="0.09"
+          />
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6 max-w-64">
+          <label
+            class="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2"
+            id="fullChargeKWH"
+          >
+            Carga total em kWH do veículo
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            formControlName="fullChargeKWH"
+            id="fullChargeKWH"
+            placeholder="64"
+          />
+        </div>
+        <div class="md:flex md:row-auto mb-6">
+          <button
+            class="bg-gray-900 active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-xl outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            type="button"
+            (click)="makeCalculation()"
+          >
+            <p class="gradient-text">Calcular</p>
+          </button>
+          <div class="inset-y-0 right-0 px-12">
+            <div
+              class="bottom-0 right-0 end-0 block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2"
+              *ngIf="result !== null"
+            >
+              <p>{{ result }}</p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
